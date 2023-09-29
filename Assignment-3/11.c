@@ -1,0 +1,40 @@
+/* 11.Write a C program to count the frequency of characters in a string. (For example, 
+Input String is: College
+Frequency of c = 1
+Frequency of l = 2
+Frequency of e = 2 etc.
+*/
+
+#include <string.h>
+int main()
+{
+    char s[1000];  
+    int  i,j,k,count=0,n;
+ 
+    printf("Enter  the string : ");
+    gets(s);
+     
+    for(j=0;s[j];j++);
+	 n=j; 
+    
+	printf(" frequency count character in string:\n");
+ 
+    for(i=0;i<n;i++)  
+    {
+     	count=1;
+    	if(s[i])
+    	{
+ 		  for(j=i+1;j<n;j++)  
+	      {   
+	        if(s[i]==s[j])
+    	    {
+                 count++;
+                 s[j]='\0';
+	     	}
+	      }  
+	      printf(" '%c' = %d \n",s[i],count);
+   
+       }   
+ 	}   
+    return 0;
+}
